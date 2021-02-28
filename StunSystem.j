@@ -176,9 +176,6 @@ endglobals
 
         static method addStun takes unit whichUnit, real time returns thistype
             local thistype this
-            if IS_HERO_STUN_IMMUNE[GetPlayerId(GetOwningPlayer(whichUnit))] then
-                return 0
-            endif
             if LoadInteger(HASH, GetHandleId(whichUnit),0) == null then
                 set this = thistype.allocate()
                 set Destroy = CreateTrigger()
